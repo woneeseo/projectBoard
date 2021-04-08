@@ -36,9 +36,10 @@
        	z-index: -1;
     }
     
-    .header h1{
+    .header span{
     	color: white;
     	position: relative;
+    	font-size: 3em;
     }
     
     
@@ -53,12 +54,23 @@
 
 
 
-	<div class="header" style="margin: 0 10px 30px 10px; color: white;">
-		<h1>Hello world
-		<div style="float: right;">
-			<span class="glyphicon glyphicon-th" aria-hidden="true" onclick="location.href='menu'"></span>
-		</div>		
-		</h1>
+	<div>
+		<div class="header">
+			<span style="margin: 20px 10px 30px 10px; color: white;">Hello world</span>
+			<div class="dropdown" style="float: right;">
+				<button class="btn btn-default dropdown-toggle" type="button"
+					id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="true" style="background: none; border: none; margin-right: 20px; margin-top: 20px; font-size: 1.5em; color: white;">
+					Menu
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"
+					style="position:inherit ; font-size: 1.5em;">
+					<li><a href="/about">About Us</a></li>
+					<li><a href="/board">Community Board</a></li>
+					<li><a href="/ask">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<div class="container">
@@ -73,24 +85,39 @@
 				<h1 style="color: white;">About Us</h1>
 				<img alt="smile-emozi" src="resources/transparent-background-emoji-5.png" width="60%">	
 				<br>
-				<button class="btn btn-lg" style="color: black; background: none; font-size: 1.5em;">Click!</button>
+				<button class="btn btn-lg btn_about" style="color: black; background: none; font-size: 1.5em;">Click!</button>
 			</div>
 			<div class="row" style="width: 40%; float: left;">
 				<h1 style="color: white;">Community Board</h1>
 				<img alt="smile-emozi_with_heart" src="resources/transparent-background-emoji-11.png" width="60%">
 				<br>
-				<button class="btn btn-lg" style="color: white; background: none; font-size: 1.5em;">Click!</button>
+				<button class="btn btn-lg btn_board_main" style="color: white; background: none; font-size: 1.5em;">Click!</button>
 			</div>
 			<div class="row" style="width: 33%; float: right;">
 				<h1 style="color: white;">Contact Us</h1>
 				<img alt="shy-emozi" src="resources/transparent-background-emoji-2.png" width="60%">
 				<br>
-				<button class="btn btn-lg" style="color: black; background: none; font-size: 1.5em;">Click!</button>
+				<button class="btn btn-lg btn_ask_main" style="color: black; background: none; font-size: 1.5em;">Click!</button>
 			</div>
 		</div>
 	</div>
 	
 <div class="background"></div>	
+
+<script type="text/javascript">
+	
+	$(".btn_about").click(function() {
+		location.assign("/about");
+	});
+
+	$(".btn_board_main").click(function() {
+		location.assign("/board");
+	});
+	
+	$(".btn_ask_main").click(function() {
+		location.assign("/ask");
+	});	
+</script>
 
 </body>
 </html>
